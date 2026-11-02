@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | EcoBloom Garden Centre</title>
+  <meta name="description" content="Contact EcoBloom for eco-friendly products. Visit us in Sandton, Gauteng. Email info@ecobloom.co.za">
+  <meta name="keywords" content="EcoBloom contact, eco shop South Africa, Sandton garden centre">
+  <meta property="og:title" content="Contact EcoBloom">
+  <meta property="og:description" content="Get in touch with EcoBloom for sustainable living products">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Leaflet Map CSS - Required for map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<header>
+  <nav style="padding:20px; background:#2e7d32;">
+    <a href="index.html" style="color:white; margin-right:20px; font-weight:bold;">EcoBloom</a>
+    <a href="index.html" style="color:white; margin-right:15px;">Home</a>
+    <a href="about.html" style="color:white; margin-right:15px;">About</a>
+    <a href="products.html" style="color:white; margin-right:15px;">Products</a>
+    <a href="enquiry.html" style="color:white; margin-right:15px;">Enquiry</a>
+    <a href="contact.html" style="color:white;">Contact</a>
+  </nav>
+</header>
+
+<main style="max-width:650px; margin:40px auto; padding:20px; font-family:Arial;">
+  <h1>Contact EcoBloom</h1>
+  <p>Have a question? We compile your message into an email for quick response.</p>
+
+  <form id="contactForm" style="background:#f9f9f9; padding:20px; border-radius:8px;">
+
+    <label><strong>Full Name:</strong></label><br>
+    <input type="text" id="cName" placeholder="Your full name" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="cName-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Email:</strong></label><br>
+    <input type="email" id="cEmail" placeholder="your@email.com" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="cEmail-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Phone (optional):</strong></label><br>
+    <input type="text" id="cPhone" placeholder="e.g. 0821234567 (optional)" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="cPhone-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Message Type:</strong></label><br>
+    <select id="cType" style="width:100%; padding:10px; margin:5px 0;">
+      <option value="General Enquiry">General Enquiry</option>
+      <option value="Product Support">Product Support</option>
+      <option value="Feedback">Feedback</option>
+      <option value="Order Issue">Order Issue</option>
+    </select><br><br>
+
+    <label><strong>Message:</strong></label><br>
+    <textarea id="cMessage" placeholder="Type your message (min 10 characters)" style="width:100%; padding:10px; height:120px; margin:5px 0;"></textarea>
+    <small id="cMessage-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <button type="submit" style="background:#2e7d32; color:white; padding:12px 25px; border:none; border-radius:5px; cursor:pointer; font-size:16px; margin-top:15px;">Send Message</button>
+
+  </form>
+
+  <!-- AJAX response - REQUIRED BY BRIEF - No page reload -->
+  <div id="contactResponse" style="margin-top:20px; padding:15px; background:#e8f5e9; border-radius:8px; min-height:20px;"></div>
+
+  <h2 style="margin-top:40px;">Find Us - EcoBloom Garden Centre</h2>
+  <p>Sandton, Gauteng, South Africa</p>
+  <!-- Interactive Map - REQUIRED BY BRIEF -->
+  <div id="map" style="height:350px; width:100%; border-radius:8px; margin-top:15px; z-index:1;"></div>
+
+</main>
+
+<footer style="text-align:center; padding:20px; margin-top:40px; background:#f1f1f1;">
+  <p>© 2026 EcoBloom Garden Centre. Grow, care and connect with nature.</p>
+  <p>Email: info@ecobloom.co.za | Phone: +27 11 123 4567</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
+  <img id="lightbox-img" style="max-width:90%; border-radius:8px;">
+</div>
+
+<!-- Leaflet Map JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // EcoBloom location - Sandton
+  var map = L.map('map').setView([-26.1076, 28.0567], 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  L.marker([-26.1076, 28.0567]).addTo(map).bindPopup("<b>EcoBloom Garden Centre</b><br>Sandton, Gauteng<br>Eco-friendly products").openPopup();
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

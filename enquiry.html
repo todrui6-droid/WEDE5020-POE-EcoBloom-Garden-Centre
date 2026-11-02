@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Enquiry | EcoBloom Garden Centre</title>
+  <meta name="description" content="Enquire about EcoBloom eco-friendly products. Get price, availability and delivery info.">
+  <meta name="keywords" content="EcoBloom enquiry, eco-friendly products South Africa, bamboo products price">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav style="padding:20px; background:#2e7d32;">
+    <a href="index.html" style="color:white; margin-right:20px; font-weight:bold;">EcoBloom</a>
+    <a href="index.html" style="color:white; margin-right:15px;">Home</a>
+    <a href="about.html" style="color:white; margin-right:15px;">About</a>
+    <a href="products.html" style="color:white; margin-right:15px;">Products</a>
+    <a href="enquiry.html" style="color:white; margin-right:15px;">Enquiry</a>
+    <a href="contact.html" style="color:white;">Contact</a>
+  </nav>
+</header>
+
+<main style="max-width:650px; margin:40px auto; padding:20px; font-family:Arial;">
+  <h1>Product Enquiry - EcoBloom</h1>
+  <p>Select a product and we will show you the cost and availability.</p>
+
+  <form id="enquiryForm" style="background:#f9f9f9; padding:20px; border-radius:8px;">
+
+    <label><strong>Full Name:</strong></label><br>
+    <input type="text" id="eName" placeholder="e.g. Fortune Maphosa" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="eName-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Email:</strong></label><br>
+    <input type="email" id="eEmail" placeholder="your@email.com" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="eEmail-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Phone:</strong></label><br>
+    <input type="text" id="ePhone" placeholder="e.g. 0821234567" style="width:100%; padding:10px; margin:5px 0;">
+    <small id="ePhone-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Select Product:</strong></label><br>
+    <select id="eProduct" style="width:100%; padding:10px; margin:5px 0;">
+      <option value="">-- Choose Product --</option>
+<option value="Indoor Plants">Indoor Plants - R150</option>
+<option value="Succulents">Succulents - R80</option>
+<option value="Herbs">Herbs - R45</option>
+<option value="Outdoor Plants">Outdoor Plants - R120</option>
+<option value="Vegetable Seedlings">Vegetable Seedlings - R60</option>
+<option value="Gardening Tools">Gardening Tools - R200</option>
+    </select>
+    <small id="eProduct-error" class="error-msg" style="color:red; display:block;"></small><br>
+    <label><strong>Quantity:</strong></label><br>
+    <input type="radio" name="eQuantity" value="1" id="eQuantity1" checked>
+    <input type="radio" name="eQuantity" value="2" id="eQuantity2"> <label for="eQuantity2">2</label>
+    <input type="radio" name="eQuantity" value="3" id="eQuantity3"> <label for="eQuantity3">3</label>
+    <input type="radio" name="eQuantity" value="5" id="eQuantity5"> <label for="eQuantity5">5</label>
+    <br>
+    <small id="eQuantity-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <label><strong>Message:</strong></label><br>
+    <textarea id="eMessage" placeholder="Tell us about your enquiry (min 10 characters)" style="width:100%; padding:10px; height:100px; margin:5px 0;"></textarea>
+    <small id="eMessage-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <input type="checkbox" id="eTerms"> I accept the terms and conditions<br>
+    <small id="eTerms-error" class="error-msg" style="color:red; display:block;"></small><br>
+
+    <button type="submit" style="background:#2e7d32; color:white; padding:12px 25px; border:none; border-radius:5px; cursor:pointer; font-size:16px; margin-top:15px;">Submit Enquiry</button>
+
+  </form>
+
+  <!-- This div will show cost and availability - REQUIRED BY BRIEF -->
+  <div id="costDisplay" style="margin-top:20px; padding:20px; background:#e8f5e9; border-radius:8px; display:block; min-height:20px; border:2px solid #2e7d32; font-weight:bold;"></div>
+</main>
+
+<footer style="text-align:center; padding:20px; margin-top:40px; background:#f1f1f1;">
+  <p>© 2026 EcoBloom Garden Centre. Grow, care and connect with nature.</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
+  <img id="lightbox-img" style="max-width:90%; border-radius:8px;">
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
